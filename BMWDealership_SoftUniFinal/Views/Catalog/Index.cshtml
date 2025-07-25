@@ -1,0 +1,38 @@
+﻿@model List<BMWDealership_SoftUniFinal.Models.CatalogCars>
+
+@{
+    ViewData["Title"] = "Catalog";
+}
+
+<h2>Catalog</h2>
+
+<div class="catalog-grid">
+    @foreach (var item in Model)
+    {
+        <a href="@Url.Action("Details", "Catalog", new { id = item.Id })">
+            <h6>@item.Title</h6>
+            <img src=@item.ImageUrl style="width:240px;height:200px;">
+        </a>
+        
+    }
+</div>
+
+<style>
+    .catalog-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 20px;
+    }
+
+    .catalog-item {
+        border: 1px solid #ccc;
+        padding: 10px;
+        text-align: center;
+    }
+
+    .catalog-item img {
+        max-width: 100%;
+        height: auto;
+    }
+</style>
+
