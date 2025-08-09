@@ -1,0 +1,27 @@
+﻿@{
+    ViewData["Title"] = "Contact";
+}
+
+<h2>Contact Us</h2>
+
+@if (ViewBag.Confirmation != null)
+{
+    <p style="color:green;">@ViewBag.Confirmation</p>
+}
+
+<form method="post" asp-controller="Contact" asp-action="Index">
+    <div>
+        <label>Name:</label><br />
+        <input type="text" name="Name" required />
+    </div>
+    <div>
+        <label>Email:</label><br />
+        <input type="email" name="Email" required />
+    </div>
+    <div>
+        <label>Message:</label><br />
+        <textarea name="Message" rows="5" required></textarea>
+    </div>
+    <br />
+    <button type="submit">Send</button>
+</form>
