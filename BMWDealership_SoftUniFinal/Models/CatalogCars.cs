@@ -8,6 +8,7 @@
         public string ImageUrl { get; set; }
         public int Year { get; set; }
         public string Transmission { get; set; }
+        public string Price { get; set; }
         public int Horsepower { get; set; }
     }
 }
